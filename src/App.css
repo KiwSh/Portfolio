@@ -234,6 +234,35 @@ h2 {
   height: auto;
   margin-left: 170px; 
 }
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in .hero--section--content--box {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.slide-in .hero--section--img {
+  animation: slideInRight 1s ease-out forwards;
+}
 
 /* Hero Section Style Ends */
 
@@ -456,17 +485,22 @@ h2 {
   grid-template-rows: repeat(5, auto);
   width: 40%;
   row-gap: 32px;
+  
 }
 .container {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  column-gap: 32px;
-  row-gap: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center; /* Menengahkan secara horizontal */
+  gap: 10.6px;
+  flex: 1 0 0;
+  width: 100%;
 }
 .contact--label {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center; /* Menengahkan secara horizontal */
   gap: 10.6px;
   flex: 1 0 0;
   width: 100%;

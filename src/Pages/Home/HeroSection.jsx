@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Navbar from './Navbar';
 
 export default function HeroSection() {
   const [greeting, setGreeting] = useState('');
@@ -30,23 +31,26 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section id="heroSection" className="hero--section">
-      <div className="hero--section--content--box">
-        <div className="hero--section--content">
-          <p className="section--title">{greeting}</p>
-          <h1 className="hero--section--title">
-            <span className="hero--section-title--color">Saya Pelajar SMKN 1 Ciomas</span> <br />
-          </h1>
-          <p className="hero--section-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            <br /> Dolorum, quas. Amet soluta assumenda cum?
-          </p>
+    <div style={{ position: 'relative' }}>
+      <Navbar style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: '9999' }} /> {/* Atur posisi navbar */}
+      <section id="heroSection" className={`hero--section slide-in`}>
+        <div className="hero--section--content--box">
+          <div className="hero--section--content">
+            <p className="section--title">{greeting}</p>
+            <h1 className="hero--section--title">
+              <span className="hero--section-title--color">Saya Pelajar SMKN 1 Ciomas</span> <br />
+            </h1>
+            <p className="hero--section-description">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              <br /> Dolorum, quas. Amet soluta assumenda cum?
+            </p>
+          </div>
+          <button className="btn btn-primary">Get In Touch</button>
         </div>
-        <button className="btn btn-primary">Get In Touch</button>
-      </div>
-      <div className="hero--section--img">
-        <img src="./img/fotorifqi.png" alt="Hero Section" />
-      </div>
-    </section>
+        <div className="hero--section--img">
+          <img src="./img/fotorifqi.png" alt="Hero Section" />
+        </div>
+      </section>
+    </div>
   );
 }

@@ -1,8 +1,17 @@
-import data from "../../data/index.json";
+import { useEffect, useState } from 'react';
+import './Skills.css'; // Import file CSS untuk animasi
+import data from "../../data/index.json"; // Import data statis
 
 export default function MySkills() {
+  const [isLoaded, setIsLoaded] = useState(false); // State untuk menandai apakah komponen sudah dimuat
+
+  useEffect(() => {
+    // Setelah komponen dimuat, atur state isLoaded menjadi true
+    setIsLoaded(true);
+  }, []);
+
   return (
-    <section className="skills--section" id="mySkills">
+    <section className={`skills--section ${isLoaded ? 'slide-in' : ''}`} id="mySkills">
       <div className="portfolio--container">
         <h2 className="skills--section--heading">My Expertise</h2>
       </div>
